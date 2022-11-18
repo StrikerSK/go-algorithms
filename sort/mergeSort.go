@@ -2,6 +2,25 @@ package sort
 
 import "fmt"
 
+// MergeSort - recursively divide the array into two halves, sort each half and then merging them
+func MergeSort() {
+	input := []int{56, 123, 2, 78, 15, 79, 35, 89, 20, 54}
+	fmt.Println("Input array: ", input)
+	fmt.Println("Output array: ", mergeSort(input))
+}
+
+func mergeSort(input []int) []int {
+	if len(input) < 2 {
+		return input
+	} else {
+		middle := len(input) / 2
+		leftArray := mergeSort(input[0:middle])
+		rightArray := mergeSort(input[middle:])
+
+		return mergeSlices(leftArray, rightArray)
+	}
+}
+
 func mergeSlices(slice1, slice2 []int) []int {
 	var result []int
 	i, j := 0, 0
@@ -27,23 +46,4 @@ func mergeSlices(slice1, slice2 []int) []int {
 	}
 
 	return result
-}
-
-func mergeSort(input []int) []int {
-	if len(input) < 2 {
-		return input
-	} else {
-		middle := len(input) / 2
-		leftArray := mergeSort(input[0:middle])
-		rightArray := mergeSort(input[middle:])
-
-		return mergeSlices(leftArray, rightArray)
-	}
-}
-
-// MergeSort - recursively divide the array into two halves, sort each half and then merging them
-func MergeSort() {
-	input := []int{56, 123, 2, 78, 15, 79, 35, 89, 20, 54}
-	fmt.Println("Input array: ", input)
-	fmt.Println("Output array: ", mergeSort(input))
 }
