@@ -3,10 +3,11 @@ package sort
 import "fmt"
 
 // QuickSort -
-func QuickSort() {
-	input := []int{56, 123, 2, 78, 15, 79, 35, 89, 20, 54}
-	fmt.Println("Input array: ", input)
-	fmt.Println("Output array: ", quickSort(input, 0, len(input)-1))
+func QuickSort(input []int) {
+	var inputCopy []int
+	inputCopy = append(inputCopy, input...)
+	fmt.Println("Quick sort - input array: ", inputCopy)
+	fmt.Println("Quick sort - output array: ", quickSort(inputCopy, 0, len(inputCopy)-1))
 }
 
 func quickSort(slice []int, low, high int) []int {

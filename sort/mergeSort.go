@@ -3,10 +3,11 @@ package sort
 import "fmt"
 
 // MergeSort - recursively divide the array into two halves, sort each half and then merging them
-func MergeSort() {
-	input := []int{56, 123, 2, 78, 15, 79, 35, 89, 20, 54}
-	fmt.Println("Input array: ", input)
-	fmt.Println("Output array: ", mergeSort(input))
+func MergeSort(input []int) {
+	var inputCopy []int
+	inputCopy = append(inputCopy, input...)
+	fmt.Println("Merge sort - input array: ", inputCopy)
+	fmt.Println("Merge sort - output array: ", mergeSort(inputCopy))
 }
 
 func mergeSort(input []int) []int {
