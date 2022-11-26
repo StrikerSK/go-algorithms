@@ -12,6 +12,7 @@ func main() {
 	sort.MergeSort(input)
 	sort.QuickSort(input)
 	sort.BubbleSort(input)
+	sort.RadixSort(input)
 
 	sectionDivider("Searching")
 	sortedInput := []int{2, 15, 20, 35, 54, 56, 78, 79, 89, 123}
